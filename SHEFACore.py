@@ -4,6 +4,9 @@ from geopy.distance import distance
 import pandas as pd
 import webbrowser
 
+st.title('SHEFA')
+
+
 DISTANCE_OPTIONS = [5, 10, 25, 50]
 
 def geocode_address(address):
