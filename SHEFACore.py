@@ -93,7 +93,6 @@ def main():
                             st.write(f"{col}: {hyperlink(url)}", unsafe_allow_html=True)
                         elif col not in ['Latitude', 'Longitude']:
                             st.write(f"{col}: {row[col]}")
-                        st.write(str(dist))
                     st.write("-" * 30)
             else:
                 st.write(f"No locations found within {distance_limit} miles of your address '{user_address}' for selected service types.")
