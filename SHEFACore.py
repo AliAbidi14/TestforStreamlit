@@ -18,7 +18,7 @@ def calculate_distance(coords1, coords2):
     return distance(coords1, coords2).miles
 
 def filter_by_service_type(row, medical, dental, behavioral):
-    service_type = row['SERVICE TYPE'].lower()
+    service_type = row['Service Type'].lower()
     
     if medical and 'medical' in service_type:
         return True
@@ -58,7 +58,7 @@ def main():
                 return
 
             # Read location coordinates from the CSV file
-            csv_file = 'Addresses.csv'  # Replace with your CSV file path
+            csv_file = r'/Users/aliabidi/Documents/PythonFiles/Addresses.csv'  # Replace with your CSV file path
             df = pd.read_csv(csv_file)
 
             # Initialize an empty list to store matching rows
