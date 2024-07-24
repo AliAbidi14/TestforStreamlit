@@ -85,7 +85,7 @@ def main():
             # Display the matching rows
             if matching_rows:
                 st.markdown(f"{counter} locations within {distance_limit} miles of your address '{user_address}' for selected service types:")
-                st.write(\n)
+                st.write('\n')
                 for row in matching_rows:
                     for col in df.columns:
                         if col == 'Website':
