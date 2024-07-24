@@ -36,8 +36,8 @@ def hyperlink(url):
     return f'<a href="{url}" target="_blank">{url}</a>'
 
 def main():
-    st.title("Location Search")
-
+    #st.title("Location Search")
+    counter = 0
     # Input section
     user_address = st.text_input("Enter your zip code:")
 
@@ -80,10 +80,11 @@ def main():
                 # Check if row matches distance and service type criteria
                 if dist <= distance_limit and filter_by_service_type(row, medical, dental, behavioral):
                     matching_rows.append(row)
+                    counter += 1
 
             # Display the matching rows
             if matching_rows:
-                st.markdown(f"Locations within {distance_limit} miles of your address '{user_address}' for selected service types:")
+                st.markdown(f"{counter} locations within {distance_limit} miles of your address '{user_address}' for selected service types:")
                 for row in matching_rows:
                     for col in df.columns:
                         if col == 'Website':
