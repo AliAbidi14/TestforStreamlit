@@ -5,7 +5,7 @@ import pandas as pd
 import webbrowser
 
 st.title('SHEFA')
-
+st.header('Search for free/low-cost healthcare near you')
 
 DISTANCE_OPTIONS = [5, 10, 25, 50]
 
