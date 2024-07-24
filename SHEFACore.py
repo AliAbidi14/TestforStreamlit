@@ -62,7 +62,7 @@ def main():
                 return
 
             # Read location coordinates from the CSV file
-            csv_file = r'/Users/aliabidi/Documents/PythonFiles/Addresses.csv'  # Replace with your CSV file path
+            csv_file = r'Addresses.csv'  # Replace with your CSV file path
             df = pd.read_csv(csv_file)
 
             # Initialize an empty list to store matching rows
