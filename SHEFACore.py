@@ -38,6 +38,7 @@ def hyperlink(url):
 def main():
     #st.title("Location Search")
     counter = 0
+    distlist = []
     # Input section
     user_address = st.text_input("Enter your zip code:")
 
@@ -61,7 +62,7 @@ def main():
                 return
 
             # Read location coordinates from the CSV file
-            csv_file = r'Addresses.csv'  # Replace with your CSV file path
+            csv_file = r'/Users/aliabidi/Documents/PythonFiles/Addresses.csv'  # Replace with your CSV file path
             df = pd.read_csv(csv_file)
 
             # Initialize an empty list to store matching rows
@@ -79,7 +80,9 @@ def main():
 
                 # Check if row matches distance and service type criteria
                 if dist <= distance_limit and filter_by_service_type(row, medical, dental, behavioral):
+                    row['Distance (miles)'] = round(dist, 2)
                     matching_rows.append(row)
+                    distlist.append(dist)
                     counter += 1
 
             # Display the matching rows
@@ -91,6 +94,7 @@ def main():
                         if col == 'Website':
                             url = row[col]
                             st.write(f"{col}: {hyperlink(url)}", unsafe_allow_html=True)
+                            st.write(f"Distance (miles): {row['Distance (miles)']}")
                         elif col not in ['Latitude', 'Longitude']:
                             st.write(f"{col}: {row[col]}")
                     st.write("-" * 30)
