@@ -7,7 +7,7 @@ import webbrowser
 st.title('SHEFA')
 st.subheader('Search for free/low-cost healthcare near you')
 
-DISTANCE_OPTIONS = [5, 10, 25, 50]
+DISTANCE_OPTIONS = [5, 10, 25, 50, 100]
 
 def geocode_address(address):
     geolocator = Nominatim(user_agent="syedinamabidi@gmail.com")
@@ -39,7 +39,7 @@ def main():
     st.title("Location Search")
 
     # Input section
-    user_address = st.text_input("Enter your State two letter code and Zip e.g., WI 54449:")
+    user_address = st.text_input("Enter your zip code:")
 
     distance_limit = st.selectbox("Select distance limit (miles):", DISTANCE_OPTIONS)
 
